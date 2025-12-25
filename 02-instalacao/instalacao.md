@@ -1,170 +1,91 @@
-# ============================================
-# GUIA PRÁTICO: INSTALAÇÃO E CRIAÇÃO DE REPOSITÓRIO GIT
-# Público: QA
-# ============================================
+# 🚀 Guia de Git para QA: Instalação e Repositórios
 
+Este guia foi criado para que qualquer pessoa — do iniciante ao QA Sênior — entenda o fluxo de versionamento de testes e automação.
 
-# ------------------------------
-# 1️⃣ VERIFICAR SE O GIT ESTÁ INSTALADO
-# ------------------------------
+---
 
+## 📋 Pré-requisitos
+
+Antes de começar, você precisará de:
+* 💻 Um computador (Windows, macOS ou Linux).
+* 🌐 Acesso à internet.
+* 🖥️ Um terminal (Git Bash, PowerShell ou Terminal).
+* 👤 Uma conta no [GitHub](https://github.com).
+
+> 💡 **Nota:** Não é necessário saber programar para versionar seus planos de teste ou scripts de automação.
+
+---
+
+## 🛠️ 1. Instalação (Windows)
+
+1. Baixe o instalador no site oficial: [git-scm.com](https://git-scm.com).
+2. Execute o arquivo e siga o fluxo "Next" (as opções padrão são suficientes).
+3. Após instalar, valide se deu certo abrindo o terminal e digitando:
+
+```bash
 git --version
 
-# Saída esperada:
-# git version 2.xx.x
-# Se não aparecer versão, o Git não está instalado
+Saída esperada: git version 2.xx.x
 
+⚙️ 2. Configuração Inicial (Obrigatória)
+O Git precisa saber quem é você para registrar a autoria dos testes e melhorias nos scripts.
 
-# ------------------------------
-# 2️⃣ CONFIGURAÇÃO INICIAL (OBRIGATÓRIA)
-# ------------------------------
-# Todo commit precisa de autor (nome e e-mail)
+# Configure seu nome
+git config --global user.name "Seu Nome Completo"
 
-git config --global user.name "Joyce Sena"
-git config --global user.email "joyce@email.com"
+# Configure seu e-mail (use o mesmo do GitHub)
+git config --global user.email "seu-email@exemplo.com"
 
-# Conferindo se salvou corretamente
-git config --list
+📂 3. Entendendo o Repositório
+Um repositório é onde o Git faz toda a mágica do controle de qualidade e histórico.
 
-# Saída esperada:
-# user.name=Joyce Sena
-# user.email=joyce@email.com
+Local: Onde você desenvolve e executa seus scripts de teste.
 
-# ⚠️ Boa prática:
-# Use o MESMO e-mail do GitHub para manter histórico correto
+Remoto: Onde o time colabora e armazena o código (GitHub/GitLab).
 
+🏗️ 4. Criando seu Primeiro Repositório
+Siga estes passos no terminal para iniciar um projeto do zero:
 
-# ------------------------------
-# 3️⃣ CRIANDO UM REPOSITÓRIO LOCAL DO ZERO
-# ------------------------------
+# 1. Crie a pasta do projeto
+mkdir meu-projeto-de-testes
 
-# Criar a pasta do projeto
-mkdir git-para-qa
+# 2. Entre na pasta
+cd meu-projeto-de-testes
 
-# Entrar na pasta
-cd git-para-qa
-
-# Inicializar o Git
+# 3. Inicialize o Git
 git init
 
-# Saída esperada:
-# Initialized empty Git repository
+⚠️ Atenção: Isso criará uma pasta oculta .git. Nunca a apague, pois ela contém todo o histórico de versões dos seus testes.
 
-# ⚠️ O Git criou a pasta oculta .git
-# NUNCA apague essa pasta
+🔄 5. O Fluxo de Trabalho do QA
+No dia a dia, você repetirá este ciclo constantemente para garantir a rastreabilidade:
 
-
-# ------------------------------
-# 4️⃣ VERIFICANDO O ESTADO DO REPOSITÓRIO
-# ------------------------------
-
+Passo A: Ver o status
+Sempre verifique o que mudou antes de agir:
 git status
 
-# Saída esperada:
-# On branch master
-# No commits yet
-# nothing to commit
+Passo B: Adicionar arquivos (Stage)
+Prepare os arquivos para serem salvos no próximo "checkpoint":
 
-# 👉 Esse comando deve ser usado SEMPRE
-
-
-# ------------------------------
-# 5️⃣ CRIANDO UM ARQUIVO DE TESTE
-# ------------------------------
-
-echo "Meu primeiro arquivo" > teste.txt
-
-# Conferindo o status
-git status
-
-# Saída esperada:
-# Untracked files:
-#   teste.txt
-
-# Isso significa:
-# O arquivo existe
-# Mas o Git ainda NÃO está versionando
+git add nome-do-arquivo.txt  # Para um arquivo específico
+git add .                    # Para todos os arquivos da pasta
 
 
-# ------------------------------
-# 6️⃣ ADICIONANDO ARQUIVOS AO CONTROLE DE VERSÃO
-# ------------------------------
+Passo C: Salvar a alteração (Commit)
+Crie um ponto na história com uma mensagem que explique o que foi testado ou alterado:
 
-# Adicionar arquivo específico
-git add teste.txt
+git commit -m "feat: adiciona script de login para o Cypress"
 
-# OU adicionar tudo
-# git add .
+🏆 A Regra de Ouro
+Para não errar a ordem, memorize esta sequência:
 
-# Conferindo novamente
-git status
-
-# Saída esperada:
-# Changes to be committed:
-#   new file: teste.txt
+git add ➡️ git commit ➡️ git push
 
 
-# ------------------------------
-# 7️⃣ CRIANDO O PRIMEIRO COMMIT
-# ------------------------------
-
-git commit -m "feat: primeiro commit do projeto"
-
-# Saída esperada:
-# 1 file changed, 1 insertion(+)
-
-# Agora o projeto já tem histórico
 
 
-# ------------------------------
-# 8️⃣ REGRA DE OURO DO GIT (GRAVE ISSO)
-# ------------------------------
-# git add  -> adiciona arquivos
-# git commit -> salva no histórico
-# git push -> envia para o remoto
-
-# ❌ commit sem add = erro
-# ❌ push sem commit = erro
 
 
-# ------------------------------
-# 9️⃣ ERROS COMUNS (EXEMPLOS REAIS)
-# ------------------------------
-
-# ❌ Erro: tentar commitar sem adicionar arquivos
-git commit -m "meu commit"
-
-# Erro:
-# nothing to commit
-
-# ✔️ Solução:
-git add .
-git commit -m "meu commit"
 
 
-# ❌ Erro: inicializar Git na pasta errada
-# Problema:
-# Rodar git init dentro de outra pasta versionada
-# Criar vários .git sem perceber
-
-# ✔️ Boa prática:
-# Um projeto = um repositório
-
-
-# ------------------------------
-# 🔟 VISÃO DE QA
-# ------------------------------
-
-# QA Júnior:
-# Git ajuda a não perder código
-
-# QA Pleno:
-# Git ajuda a rastrear quando o bug surgiu
-
-# QA Sênior:
-# Sem Git não existe:
-# rastreabilidade
-# auditoria
-# histórico confiável
-# qualidade de processo
 
