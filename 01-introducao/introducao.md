@@ -51,6 +51,7 @@ Mesmo QAs que não codam precisam de Git para:
 - acompanhar mudanças feitas por devs
 
 Um QA que sabe Git:
+
 ✔️ trabalha melhor em equipe  
 ✔️ evita erros em produção  
 ✔️ se destaca em entrevistas  
