@@ -41,6 +41,9 @@ Ajudar QAs iniciantes e em transição a:
 
 Este repositório está em constante evolução com novos exemplos e boas práticas.
 
+## ⭐ Se este guia te ajudou
+Considere dar uma estrela ⭐
+
 
 ## 📁 Estrutura do Repositório
 
