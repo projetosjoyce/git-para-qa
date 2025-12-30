@@ -14,7 +14,6 @@ Aqui você encontrará conceitos essenciais, comandos mais usados no dia a dia, 
 4. [Clonando Repositórios](04-clonando-projetos/clonando-projetos.md)
 5. [Branches e Fluxo de Trabalho](05-branches-e-fluxo/branches.md)
 6. [Erros Comuns no Git](06-erros-comuns/erros-comuns.md)
-7. [Exemplos Práticos](exemplos/fluxo-basico.md)
 
 ---
 
