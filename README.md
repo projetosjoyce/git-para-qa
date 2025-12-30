@@ -67,8 +67,5 @@ git-para-qa/
 ├── 05-branches-e-fluxo/     # Branches, merge e fluxo de trabalho
 │   └── branches.md
 │
-├── 06-erros-comuns/         # Erros comuns e como resolvê-los
-│   └── erros-comuns.md
-│
-└── exemplos/                # Exemplos práticos do dia a dia de QA
-    └── fluxo-basico.md
+└── 06-erros-comuns/                # Erros comuns e como resolvê-los
+    └── erros-comuns.md
