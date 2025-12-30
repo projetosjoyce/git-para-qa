@@ -1,7 +1,4 @@
 # 🌿 Branches e Fluxo de Trabalho no Git  
-## Guia para QA 
-
----
 
 ## 🎯 Objetivo
 
@@ -40,9 +37,9 @@ Normalmente chamada de:
 |------|-------|
 | main | Código em produção |
 | develop | Código em validação |
-| feature/* | Nova funcionalidade |
-| bugfix/* | Correção de bug |
-| hotfix/* | Correção urgente |
+| feature | Nova funcionalidade |
+| bugfix | Correção de bug |
+| hotfix | Correção urgente |
 
 ---
 
@@ -58,7 +55,7 @@ git branch
 ```bash
 git checkout develop
 ```
-ou
+**ou**
 ```bash
 git switch develop
 ```
@@ -67,28 +64,28 @@ git switch develop
 ```bash
 git checkout -b feature/testes-login
 ```
-ou
+**ou**
 ```bash
 git switch -c feature/testes-login
 ```
 
 ## 🧪 Fluxo real de QA (na prática)
 
-1. Atualiza o código
+**1. Atualiza o código**
 ```bash
 git pull
 ```
 
-2. Vai para a branch correta
+**2. Vai para a branch correta**
 ```bash
 git checkout develop
 ```
 
-3. Executa os testes
+**3. Executa os testes**
 
-4. Reporta bugs ou valida correções
+**4. Reporta bugs ou valida correções**
 
-5. Aprova ou reprova PR
+**5. Aprova ou reprova PR**
 
 ## 🔀 Merge (visão de QA)
 Merge é quando uma branch é unida a outra.
