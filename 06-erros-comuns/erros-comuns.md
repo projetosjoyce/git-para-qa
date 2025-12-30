@@ -1,7 +1,4 @@
 # ❌ Erros Comuns no Git  
-## E como um QA profissional resolve
-
----
 
 ## 🎯 Objetivo
 
@@ -74,7 +71,7 @@ git switch develop
 
 Nunca mexa na pasta .git
 
-## ❌ Erro 5 — Baixar ZIP em vez de clonar##
+## ❌ Erro 5 — Baixar ZIP em vez de clonar
 
 **Problema**
 
@@ -87,7 +84,7 @@ Nunca mexa na pasta .git
 git clone <url-do-repositorio>
 ```
 
-## ❌ Erro 6 — Não saber o fluxo do time##
+## ❌ Erro 6 — Não saber o fluxo do time
 
 **Sintoma**
 
