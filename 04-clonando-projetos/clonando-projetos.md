@@ -1,11 +1,11 @@
 # 🧬 Clonando Repositórios Git  
-## Guia Completo para QA — do Iniciante ao Sênior
+## Guia Completo para QA 
 
 ---
 
 ## 🎯 Objetivo
 
-Ao final deste capítulo, você será capaz de:
+**Ao final deste capítulo, você será capaz de:**
 
 - Entender o que é clonar um repositório
 - Clonar projetos via HTTPS e SSH
@@ -17,7 +17,7 @@ Ao final deste capítulo, você será capaz de:
 
 ## 🧠 O que é clonar um repositório?
 
-Clonar um repositório significa:
+**Clonar um repositório significa:**
 
 > Copiar um projeto que está no GitHub/GitLab/Bitbucket para sua máquina local,
 > mantendo TODO o histórico de commits, branches e versões.
@@ -41,7 +41,7 @@ Situações reais:
 - Executar pipelines de CI/CD
 - Analisar Pull Requests
 
-👉 QA profissional clona repositórios diariamente.
+👉 QA clona repositórios diariamente.
 
 ---
 
@@ -53,7 +53,7 @@ Antes de clonar, verifique:
 - Acesso ao repositório
 - Terminal aberto (Git Bash, CMD ou PowerShell)
 
-Verificar versão do Git:
+**Verificar versão do Git:**
 
 ```bash
 git --version
@@ -76,35 +76,36 @@ git --version
 
 - Estudos iniciais
 
-Passo 1 — Copiar o link HTTPS
+**Passo 1 — Copiar o link HTTPS**
 ```bash
 https://github.com/empresa/projeto-qa.git
 ```
 
-Passo 2 — Escolher a pasta
+**Passo 2 — Escolher a pasta**
 ```bash
 cd Documentos
 ```
 
-Passo 3 — Clonar o repositório
+**Passo 3 — Clonar o repositório**
 ```bash
 git clone https://github.com/empresa/projeto-qa.git
 ```
-Saída esperada:
+**Saída esperada:**
 ```bash
 Cloning into 'projeto-qa'...
 ```
-Passo 4 — Entrar no projeto
+
+**Passo 4 — Entrar no projeto**
 ```bash
 cd projeto-qa
 ```
 
-Passo 5 — Conferir status
+**Passo 5 — Conferir status**
 ```bash
 git status
 ```
 
-Resultado esperado:
+**Resultado esperado:**
 ```bash
 On branch main
 nothing to commit, working tree clean
@@ -124,20 +125,20 @@ nothing to commit, working tree clean
 
 - Ambientes profissionais
 
-Verificar se já existe chave SSH
+**Verificar se já existe chave SSH**
 ```bash
 ls ~/.ssh
 ```
 Se existir id_rsa.pub ou id_ed25519.pub, a chave já existe.
 
-Criar chave SSH (se necessário)
+**Criar chave SSH (se necessário)**
 ```bash
 ssh-keygen -t ed25519 -C "seu-email@empresa.com"
 ```
 
 **Pressione ENTER para todas as perguntas.**
 
-Copiar chave pública
+**Copiar chave pública**
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
@@ -171,7 +172,7 @@ projeto-qa/
 **⚠️ A pasta .git NÃO deve ser alterada.**
 
 ## 🔄 Atualizando o projeto antes de testar
-Sempre execute:
+**Sempre execute:**
 ```bash
 git pull
 ```
@@ -185,19 +186,19 @@ Evita:
 - Automatizar versão errada
 
 ## 🌿 Trabalhando com branches
-Ver branch atual:
+**Ver branch atual:**
 ```bash
 git branch
 ```
-Ver branches remotas:
+**Ver branches remotas:**
 ```bash
 git branch -r
 ```
-Trocar de branch:
+**Trocar de branch:**
 ```bash
 git checkout develop
 ```
-ou
+**ou**
 
 ```bash
 git switch develop
